@@ -4,3 +4,14 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+samotop = "0.13.2"
+tokio = { version = "1.0", features = ["full"] }
+
+[profile.minimal]
+inherits = "release"
+opt-level = "z"
+lto = "thin"
+codegen-units = 1
+strip = "symbols"
+panic = "abort"
+incremental = false
